@@ -1,0 +1,99 @@
+# ========================================
+# NEVER COMMIT THESE FILES
+# ========================================
+
+# Environment variables - CONTAINS SECRETS!
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+!.env.example  # Keep example files
+
+# Private keys and certificates
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+
+# Secret files
+*secret*
+*private*
+!**/public/  # Allow public directories
+
+# ========================================
+# Dependencies
+# ========================================
+node_modules/
+*/node_modules/
+*/*/node_modules/
+.pnp
+.pnp.js
+bun.lockb
+
+# ========================================
+# Build outputs
+# ========================================
+dist/
+build/
+*.tsbuildinfo
+
+# ========================================
+# IDE
+# ========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ========================================
+# OS
+# ========================================
+.DS_Store
+Thumbs.db
+
+# ========================================
+# Logs
+# ========================================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+*.log
+
+# ========================================
+# Testing
+# ========================================
+coverage/
+.nyc_output/
+
+# ========================================
+# Hardhat / Blockchain
+# ========================================
+packages/contracts/artifacts/
+packages/contracts/cache/
+packages/contracts/typechain-types/
+packages/contracts/deployments/localhost/
+
+# ========================================
+# Supabase
+# ========================================
+.supabase/
+supabase/.temp/
+
+# ========================================
+# Temporary files
+# ========================================
+.cache/
+temp/
+tmp/
+*.tmp
+
+# ========================================
+# Security scanning
+# ========================================
+.secrets.baseline
+detect-secrets-results.txt
