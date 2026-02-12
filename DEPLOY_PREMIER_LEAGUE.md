@@ -2,7 +2,7 @@
 
 ## Option 1: SQL Editor (Easiest)
 
-1. Go to [Supabase SQL Editor](https://supabase.com/dashboard/project/orvgnekuhnnirydazqya/sql/new)
+1. Go to [Supabase SQL Editor](https://supabase.com/dashboard/project/<your-project-id>/sql/new)
 2. Copy the contents of `arena/supabase/seed-premier-league.sql`
 3. Paste and click **Run**
 4. Done! ~120 Premier League players added
@@ -10,7 +10,7 @@
 ## Option 2: Use Edge Function
 
 ```bash
-supabase functions invoke seed-data --project-ref orvgnekuhnnirydazqya
+supabase functions invoke seed-data --project-ref <your-project-id>
 ```
 
 ## What Gets Added

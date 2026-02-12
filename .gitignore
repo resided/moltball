@@ -83,6 +83,7 @@ packages/contracts/deployments/localhost/
 # ========================================
 .supabase/
 supabase/.temp/
+**/supabase/.temp/
 
 # ========================================
 # Temporary files

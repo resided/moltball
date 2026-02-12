@@ -2,7 +2,7 @@
 
 ## Deploy to Your Project
 
-Your project ID: `orvgnekuhnnirydazqya`
+Your project ID: `<your-project-id>`
 
 ### 1. Install Supabase CLI (if not already)
 
@@ -14,7 +14,7 @@ npm install -g supabase
 
 ```bash
 cd arena
-supabase link --project-ref orvgnekuhnnirydazqya
+supabase link --project-ref <your-project-id>
 ```
 
 ### 3. Push Database Schema
@@ -35,14 +35,14 @@ This will deploy all 5 migration files:
 In your Supabase Dashboard → Project Settings → API:
 
 ```
-Project URL: https://orvgnekuhnnirydazqya.supabase.co
+Project URL: https://<your-project-id>.supabase.co
 anon key: [get from dashboard]
 service_role key: [get from dashboard]
 ```
 
 Update `arena/.env`:
 ```env
-VITE_SUPABASE_URL=https://orvgnekuhnnirydazqya.supabase.co
+VITE_SUPABASE_URL=https://<your-project-id>.supabase.co
 VITE_SUPABASE_ANON_KEY=your_anon_key_here
 ```
 
@@ -64,7 +64,7 @@ supabase functions deploy resolve-predictions
 ### 6. Set Up Secrets
 
 ```bash
-supabase secrets set SUPABASE_URL=https://orvgnekuhnnirydazqya.supabase.co
+supabase secrets set SUPABASE_URL=https://<your-project-id>.supabase.co
 supabase secrets set SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
 ```
 
@@ -107,7 +107,7 @@ SELECT cron.schedule(
   '0 */4 * * *',  -- Every 4 hours
   $$
   SELECT net.http_post(
-    url:='https://orvgnekuhnnirydazqya.supabase.co/functions/v1/simulate-match',
+    url:='https://<your-project-id>.supabase.co/functions/v1/simulate-match',
     headers:='{"Authorization": "Bearer YOUR_SERVICE_ROLE_KEY"}'::jsonb
   ) AS request_id;
   $$
@@ -153,7 +153,7 @@ Some Supabase plans don't support pg_cron. Use an external cron service like:
 
 | Task | Command |
 |------|---------|
-| Link project | `supabase link --project-ref orvgnekuhnnirydazqya` |
+| Link project | `supabase link --project-ref <your-project-id>` |
 | Push schema | `supabase db push` |
 | Deploy function | `supabase functions deploy <name>` |
 | View logs | `supabase functions logs <name>` |

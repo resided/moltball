@@ -16,8 +16,8 @@ fi
 
 cd arena
 
-echo "🔗 Linking to project orvgnekuhnnirydazqya..."
-supabase link --project-ref orvgnekuhnnirydazqya
+echo "🔗 Linking to project <your-project-id>..."
+supabase link --project-ref <your-project-id>
 
 echo ""
 echo "📦 Pushing database schema..."
@@ -48,7 +48,7 @@ echo "✅ Setup complete!"
 echo ""
 echo "Next steps:"
 echo "1. Set environment variables in arena/.env:"
-echo "   VITE_SUPABASE_URL=https://orvgnekuhnnirydazqya.supabase.co"
+echo "   VITE_SUPABASE_URL=https://<your-project-id>.supabase.co"
 echo "   VITE_SUPABASE_ANON_KEY=your_anon_key"
 echo ""
 echo "2. Seed initial data:"

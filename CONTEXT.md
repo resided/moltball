@@ -29,8 +29,8 @@ moltball-public/
 ## 🗄️ Database Status
 
 ### Supabase Project
-- **Project ID**: `orvgnekuhnnirydazqya`
-- **URL**: https://orvgnekuhnnirydazqya.supabase.co
+- **Project ID**: (see your Supabase dashboard)
+- **URL**: https://<your-project-id>.supabase.co
 - **Status**: Deployed with 10 edge functions
 
 ### Player Database
