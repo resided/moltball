@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 interface MatchCardMatch {
   id: string;
@@ -25,7 +26,15 @@ export function MatchCard({ match, expanded }: MatchCardProps) {
 
   return (
     <Link to={`/live/${match.id}`} className="block">
-      <div className="elite-card p-4 hover:border-primary/20">
+      <motion.div
+        className="elite-card p-4 cursor-pointer"
+        whileHover={{ 
+          scale: 1.02,
+          borderColor: "hsl(142 72% 50% / 0.25)",
+        }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ duration: 0.2 }}
+      >
         <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
           <span className="font-mono">MD {match.matchday}</span>
           <span className={match.status === "live" ? "text-primary font-bold" : ""}>{match.status === "completed" ? "FT" : match.status.toUpperCase()}</span>
@@ -91,7 +100,7 @@ export function MatchCard({ match, expanded }: MatchCardProps) {
             ))}
           </div>
         )}
-      </div>
+      </motion.div>
     </Link>
   );
 }

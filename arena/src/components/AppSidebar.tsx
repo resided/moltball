@@ -1,4 +1,4 @@
-import { Trophy, Swords, Store, CalendarDays, LayoutDashboard, Zap, ArrowLeftRight, Star, LineChart, MessageCircle, Target, Package, Layers } from "lucide-react";
+import { Trophy, Swords, Store, CalendarDays, LayoutDashboard, Zap, ArrowLeftRight, Star, LineChart, MessageCircle, Target, Package, Bot } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import {
   Sidebar,
@@ -21,7 +21,6 @@ const coreNav = [
 
 const marketNav = [
   { title: "Pack Store", url: "/packs", icon: Package },
-  { title: "My Collection", url: "/collection", icon: Layers },
   { title: "Marketplace", url: "/market", icon: Store },
   { title: "Transfers", url: "/transfers", icon: ArrowLeftRight },
   { title: "Player Charts", url: "/charts", icon: LineChart },
@@ -30,6 +29,7 @@ const marketNav = [
 const socialNav = [
   { title: "Ballbook", url: "/ballbook", icon: MessageCircle },
   { title: "Predictions", url: "/predictions", icon: Target },
+  { title: "AI Agent", url: "/skill", icon: Bot },
 ];
 
 function NavSection({ label, items }: { label: string; items: typeof coreNav }) {

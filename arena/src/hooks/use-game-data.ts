@@ -79,9 +79,9 @@ export function useMatches(gameweek?: number) {
         query = query.eq("gameweek", gameweek);
       }
 
-      // If no gameweek filter, get completed + live matches
+      // Show all matches - scheduled, live, and completed
       if (!gameweek) {
-        query = query.in("status", ["completed", "live"]);
+        query = query.in("status", ["scheduled", "live", "completed"]);
       }
 
       const { data, error } = await query.limit(50);

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 interface StandingsTeam {
   id: string;
@@ -33,6 +34,21 @@ function FormBadge({ result }: { result: string }) {
   );
 }
 
+const ease = [0.25, 0.4, 0.25, 1] as const;
+
+const tableRowVariants = {
+  initial: { opacity: 0, x: -10 },
+  animate: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: i * 0.05,
+      duration: 0.3,
+      ease,
+    },
+  }),
+};
+
 export function StandingsTable({ teams, compact }: StandingsTableProps) {
   return (
     <div className="elite-card overflow-hidden">
@@ -58,9 +74,13 @@ export function StandingsTable({ teams, compact }: StandingsTableProps) {
         </thead>
         <tbody>
           {teams.map((team, i) => (
-            <tr
+            <motion.tr
               key={team.id}
-              className={`border-b border-border/20 hover:bg-primary/[0.03] transition-all cursor-pointer ${
+              variants={tableRowVariants}
+              initial="initial"
+              animate="animate"
+              custom={i}
+              className={`border-b border-border/20 hover:bg-primary/[0.03] transition-all cursor-pointer group ${
                 i < 4 ? "border-l-2 border-l-primary" : i >= teams.length - 2 ? "border-l-2 border-l-destructive" : ""
               }`}
             >
@@ -98,7 +118,7 @@ export function StandingsTable({ teams, compact }: StandingsTableProps) {
                   </div>
                 </td>
               )}
-            </tr>
+            </motion.tr>
           ))}
         </tbody>
       </table>

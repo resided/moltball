@@ -1,6 +1,6 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
-import { WalletConnect } from "@/components/WalletConnect";
+import { WalletConnect } from "@/components/wallet-connect";
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
   return (

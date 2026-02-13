@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 interface SeasonData {
   matchday: number;
   totalMatchdays: number;
@@ -40,9 +42,11 @@ export function SeasonProgress({ season }: SeasonProgressProps) {
           <span>{season.totalMatchdays} total</span>
         </div>
         <div className="h-1.5 rounded-full bg-secondary overflow-hidden">
-          <div
-            className="h-full rounded-full bg-primary transition-all duration-500 glow-pitch"
-            style={{ width: `${progress}%` }}
+          <motion.div
+            className="h-full rounded-full bg-primary glow-pitch"
+            initial={{ width: 0 }}
+            animate={{ width: `${progress}%` }}
+            transition={{ duration: 1, ease: [0.25, 0.4, 0.25, 1], delay: 0.2 }}
           />
         </div>
       </div>
